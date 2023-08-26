@@ -21,5 +21,6 @@ public class FileStorage {
     @Lob
     @Column(length = 100000)
     private byte[] fileContent;
+
     private String fileDescription;
 }
