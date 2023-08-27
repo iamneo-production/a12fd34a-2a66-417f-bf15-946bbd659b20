@@ -1,0 +1,32 @@
+server:
+  port: 8082
+
+spring:      
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: document-service
+        predicates:
+        - Path= /document
+        uri: lb://document-service
+           
+      - id: Patient-Registration-Management
+        predicates:
+        - Path=  /store/**
+        uri: lb://Patient-Registration-Management
+#        filters:
+#           - AuthenticationFilter
+      - id: medical-records-management
+        predicates:
+        - Path= /medical/**
+        uri: lb://medical-records-management
+        
+        
+eureka:
+  instance:
+    prefer-ip-address:  true
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
