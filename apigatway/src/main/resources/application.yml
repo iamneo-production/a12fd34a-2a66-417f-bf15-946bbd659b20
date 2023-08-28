@@ -9,7 +9,7 @@ spring:
       routes:
       - id: document-service
         predicates:
-        - Path= /document
+        - Path= /document/**
         uri: lb://document-service
            
       - id: Patient-Registration-Management
@@ -18,10 +18,21 @@ spring:
         uri: lb://Patient-Registration-Management
 #        filters:
 #           - AuthenticationFilter
+
       - id: medical-records-management
         predicates:
         - Path= /medical/**
         uri: lb://medical-records-management
+
+      - id: notificationservice
+        predicates:
+        - Path= /notificationController/**
+        uri: lb://notificationservice
+
+      - id: appointmentservice
+        predicates:
+        - Path= /appointment/**
+        uri: lb://appointmentservice
         
         
 eureka:

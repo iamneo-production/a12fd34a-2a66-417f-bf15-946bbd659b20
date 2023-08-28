@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/ehrDB
     username: root
-    password: root
+    password: examly
   jpa:
     hibernate:
       ddl-auto: update
