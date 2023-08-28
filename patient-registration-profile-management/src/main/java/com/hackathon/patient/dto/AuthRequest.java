@@ -8,8 +8,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @ToString
